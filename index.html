@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Lo sabes todo sobre Dragon Ball? Juega al Pasasapalabra Dragon ball y pon a prueba tu nivel de sabiduría.">
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap"
+        rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Tilt+Warp&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+
+    <title>Pasapalabra</title>
+</head>
+
+<body>
+    <nav class="menu-container">
+        <menu class="menu-button">
+            <img class="menu-image" src="images/dropdownmenu.png" alt="">
+            <ul class="options">
+                <li class="classification-button">clasificación</li>
+                <li class="stop-button">Detener</li>
+                <li class="restart-button">Volver a jugar</li>
+            </ul>
+        </menu>
+        <div class="classification-container">
+
+            <p class="close-classification-button">X</p>
+
+            <table class="classification">
+                <thead>
+                    <tr>
+                        <th class="classification-title" colspan="3">Clasificación top 10</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>Posición</th>
+                        <th>Puntos</th>
+                        <th>Usuario</th>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                </tfoot>
+            </table>
+        </div>
+    </nav>
+    <main class="background-image">
+        <section class="welcome-screen">
+
+            <div class="choose-avatar">
+                <p>Elija un avatar</p>
+
+                <img class="avatar" src="images/piccolo.png" alt="">
+                <img class="avatar" src="images/bulma.png" alt="">
+                <img class="avatar" src="images/krilin.png" alt="">
+                <img class="avatar" src="images/gohan.png" alt="">
+                <img class="avatar" src="images/goku.png" alt="">
+                <img class="avatar" src="images/vegeta.png" alt="">
+                <img class="avatar" src="images/freezer.png" alt="">
+                <img class="avatar" src="images/muten.png" alt="">
+                <img class="avatar" src="images/chichi.png" alt="">
+                <img class="avatar" src="images/gotenksfat.png" alt="">
+                <img class="avatar" src="images/boo.png" alt="">
+                <img class="avatar" src="images/broly.png" alt="">
+
+            </div>
+            <div class="instruction">
+                <p>Instruciones del juego</p>
+
+                <ul>
+                    <li>El rosco se compone de todas las letras del abecedario.</li>
+                    <li>Deberás responder una pregunta por cada letra.</li>
+                    <li>Si aciertas obtienes 1 punto y la letra se pondrá de color verde.</li>
+                    <li>Si fallas no obtendrás ningun punto y la letra se pondrá de color rojo.</li>
+                    <li>Puedes pulsar pasapalabra para contestar en siguientes rondas sin penalización.</li>
+                    <li>El juego acabará cuando respondas todas las letras o se acabe el tiempo.</li>
+                    <li>Tienes un menu en la equina superior derecha con varias opciones.</li>
+                    <li>Escribe tu nombre de usuario, elige un avatar y dale al botón de jugar!</li>
+                    <li><input class="username-input" type="text" autocomplete="off" autofocus></li>
+                </ul>
+
+                <button class="confirm-avatar">Jugar</button>
+            </div>
+        </section>
+        <section class="pasapalabragame-container">
+
+            <div class="user-interface">
+                <div class="circle-container">
+                    <div class="align-items">
+                        <div class="countdown-circle">
+                            <svg>
+                                <circle r="150px" cx="50%" cy="50%"></circle>
+                                <circle r="150px" cx="50%" cy="50%"></circle>
+                            </svg>
+                        </div>
+
+                        <img class="circle-image circle-radar" src="images/radar2.png" alt="">
+                        <img class="circle-image circle-avatar" src="images/empty.png" alt="">
+                        <div class="countdown-number">130</div>
+
+                        <ul class="circle">
+                            <li class="item">A</li>
+                            <li class="item ">B</li>
+                            <li class="item">C</li>
+                            <li class="item">D</li>
+                            <li class="item">E</li>
+                            <li class="item">F</li>
+                            <li class="item">G</li>
+                            <li class="item">H</li>
+                            <li class="item">I</li>
+                            <li class="item">J</li>
+                            <li class="item">K</li>
+                            <li class="item">L</li>
+                            <li class="item">M</li>
+                            <li class="item">N</li>
+                            <li class="item">Ñ</li>
+                            <li class="item">O</li>
+                            <li class="item">P</li>
+                            <li class="item">Q</li>
+                            <li class="item">R</li>
+                            <li class="item">S</li>
+                            <li class="item">T</li>
+                            <li class="item">U</li>
+                            <li class="item">V</li>
+                            <li class="item">W</li>
+                            <li class="item">X</li>
+                            <li class="item">Y</li>
+                            <li class="item">Z</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="answer-container">
+                    <section class="answer">
+
+                        <div class="button-container">
+                            <img class="answer-image pasapalabra-image" src="images/pasapalabra.png" alt="">
+
+                            <button class="pres-button pasapalabra"></button>
+                        </div>
+
+                        <div class="answer-input">
+                            <img class="satan" src="images/satan.png" alt="">
+                            <input class="user-answer" type="text" maxlength="13" autocomplete="off" autofocus>
+                        </div>
+
+                        <div class="button-container">
+                            <img class="answer-image check-image" src="images/check.png" alt="">
+                            <button class="pres-button check"></button>
+                        </div>
+
+                    </section>
+                </div>
+            </div>
+            <div class="question-container">
+                <img class="caster" src="images/caster.png" alt="">
+
+                <div class="question-bubble">
+                    <p class="question">
+                        <!-- <span class='letter'>CON LA X</span><span class='letter-question'>Término usado
+                            en Dragon Ball Heroes y Online para Trunks y varios de sus amigos para denominar y
+                            diferenciar a varios personajes de otras contrapartes temporales.</span> -->
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+
+        <div class="copyright">
+            <p>©Copyright-Ranis8 2023</p>
+        </div>
+
+        <div class="social-networks">
+            <ul>
+                <li><a href="https://twitter.com/Ranis8_oficial" target="_blank"><img class="logo"
+                            src="images/twitter.png" alt=""></a></li>
+                <li><a href="https://github.com/Ruben-Ramirez-Martinez" target="_blank"><img class="logo"
+                            src="images/github.png" alt=""></a></li>
+                <li><a href="https://discord.gg/shBEqh2Fnm" target="_blank"><img class="logo" src="images/discord.png"
+                            alt=""></a></li>
+            </ul>
+        </div>
+
+    </footer>
+    <script type="module" src="js/app.js"></script>
+</body>
+
+</html>
