@@ -921,21 +921,21 @@ circle:nth-child(1) {
 
     .welcome-screen {
         width: 620px;
-        font-size: 0.7rem;
+        font-size: 0.769rem;
     }
 
     .pasapalabragame-container {
-        width: 1247px;
-        font-size: 0.68rem;
+        width: 1474px;
+        font-size: 0.745rem;
     }
 
     svg {
-        width: 338px;
-        height: 338px;
+        width: 399px;
+        height: 399px;
     }
 
     svg circle {
-        stroke-width: 35px;
+        stroke-width: 92px;
     }
 
     .letter {
@@ -944,7 +944,7 @@ circle:nth-child(1) {
 
     .letter-question {
         height: 104px;
-        top: 44px;
+        top: 56px;
     }
 
     .menu-image {
