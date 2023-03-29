@@ -1,7 +1,7 @@
 import { options, classificationContainer } from "./queryselector.js";
 import { hideElementContent, showElementContent } from "./showandhideelementcontent.js";
 
-const handleOpenClassification  = () => showElementContent(classificationContainer, 'flex');
+const handleOpenClassification  = () => showElementContent(classificationContainer);
 
 const handleCloseClassification = () => hideElementContent(classificationContainer);
 

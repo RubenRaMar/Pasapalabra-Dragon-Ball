@@ -56,7 +56,6 @@ html {
 }
 
 .options {
-    display: none;
     margin-top: 1%;
     text-align: center;
     list-style: none;
@@ -86,7 +85,7 @@ html {
     font-family: 'Comic Neue', cursive;
     position: fixed;
     z-index: 3;
-    display: none;
+    display: flex;
     top: 0vw;
     padding: 1vw;
     align-items: flex-start;
@@ -271,7 +270,6 @@ tfoot {
 
 .pasapalabragame-container {
     position: absolute;
-    display: none;
     width: 1975px;
     height: 100%;
 }
