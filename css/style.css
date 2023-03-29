@@ -151,7 +151,6 @@ tfoot {
 
 .welcome-screen {
     font-size: 0.8rem;
-    margin-block: 19px;
 }
 .welcome-screen p {
     text-align: center;
@@ -659,14 +658,6 @@ circle:nth-child(1) {
     display: none;
 }
 
-.display-initial {
-    display: initial;
-}
-
-.display-flex {
-    display: flex;
-}
-
 .footer {
     display: flex;
     justify-content: space-between;
@@ -928,7 +919,7 @@ circle:nth-child(1) {
     }
 
     .pasapalabragame-container {
-        width: 1474px;
+        width: 1417px;
         font-size: 0.745rem;
     }
 
@@ -938,7 +929,7 @@ circle:nth-child(1) {
     }
 
     svg circle {
-        stroke-width: 92px;
+        stroke-width: 84px;
     }
 
     .letter {
