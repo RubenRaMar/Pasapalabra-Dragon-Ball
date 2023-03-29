@@ -1,8 +1,8 @@
-let choosenQuestion = '';
-let choosenQuestionIndex = '';
-let answered = '';
-let letterPosition = 0;
-let questionPosition = 0;
+let choosenQuestionIndex = '',
+    choosenQuestion      = '',
+    answered             = '',
+    questionPosition     = 0,
+    letterPosition       = 0;
 
 const checkIfPlaying = (questions) => questions.every((question) => question.answered);
 

@@ -19,8 +19,8 @@ let usersPoints = [];
 
 const startPasapalabraGame = () => {
 
-    let answerPoints = 0
     let gameOver     = true;
+    let answerPoints = 0
     let username;
 
     const handleStopGame = () => {
