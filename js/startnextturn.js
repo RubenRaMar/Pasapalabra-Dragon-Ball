@@ -2,7 +2,7 @@ import { askAQuestion } from './askaquetion.js';
 import { questions } from './questions.js';
 import { selectLetter } from './changelettercolor.js';
 import { getLetterPosition } from './queryselector.js';
-
+import { setQuestionData } from './setquestiondata.js'
 
 const questionData = {
     choosenQuestionIndex : '',
@@ -12,19 +12,13 @@ const questionData = {
     letterPosition       : 0,
 }
 
-
-
 const checkIfPlaying = () => questions.every((question) => question.answered);
 
 const startNextTurn = (userAnswerInput, ask, finishGame, gameData, countdown, countdownCircle, restartQuestionPosition) => {
 
     userAnswerInput.value = '';
     if (questionData.questionPosition === 27) questionData.questionPosition = 0;
-
-    questionData.letterPosition = getLetterPosition(questionData.questionPosition);
-    questionData.choosenQuestion = questions[questionData.questionPosition];
-    questionData.choosenQuestionIndex = questionData.choosenQuestion.questionIndex;
-    questionData.answered = questionData.choosenQuestion.answered;
+    setQuestionData(questionData, getLetterPosition, questions)
 
     if ((!checkIfPlaying())) {
 
