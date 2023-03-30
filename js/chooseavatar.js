@@ -11,9 +11,7 @@ const selectedAvatar = (avatar) => {
     avatar.classList.remove('avatar');;
 };
 
-const getAvatarAndUsername = (usernameInput, avatars, circleAvatar) => {
-
-    usernameInput.value = '';
+const chooseAvatar = (avatars, circleAvatar) => {
     
     for (let index = 0; index < avatars.length; index++) {
         avatars[index].addEventListener('click', (avatar) => {
@@ -24,4 +22,4 @@ const getAvatarAndUsername = (usernameInput, avatars, circleAvatar) => {
     };
 };
 
-export { restartAvatarClasses, getAvatarAndUsername };
+export { restartAvatarClasses, chooseAvatar };

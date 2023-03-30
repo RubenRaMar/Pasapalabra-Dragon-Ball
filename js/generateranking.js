@@ -1,10 +1,12 @@
+import { rankingRows } from "./queryselector.js";
+
 class GetUserData {
     constructor(username, answerPoints, usersPoints) {
         usersPoints.push({ answerPoints, username })
     };
 };
 
-export const generateRanking = (gameData, rankingRows, usersPoints) => {
+export const generateRanking = (gameData, usersPoints) => {
     let rankingPosition = 0;
 
     if (gameData.username.length > 30) gameData.username = gameData.username.slice(0, 31) + '...';

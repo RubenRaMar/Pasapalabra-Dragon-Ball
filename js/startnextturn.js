@@ -11,7 +11,7 @@ let choosenQuestionIndex = '',
 
 const checkIfPlaying = () => questions.every((question) => question.answered);
 
-const startNextTurn = (userAnswerInput, getLetterPosition, ask, finishGame, gameData, countdown, pauseCountdownCircle, countdownCircle, rankingRows, usersPoints, restartQuestionPosition) => {
+const startNextTurn = (userAnswerInput, getLetterPosition, ask, finishGame, gameData, countdown, countdownCircle, usersPoints, restartQuestionPosition) => {
 
     userAnswerInput.value = '';
     if (questionPosition === 27) questionPosition = 0;
@@ -23,14 +23,14 @@ const startNextTurn = (userAnswerInput, getLetterPosition, ask, finishGame, game
 
     if ((!checkIfPlaying())) {
 
-        if (answered) return (++questionPosition) + (startNextTurn(userAnswerInput, getLetterPosition, ask, finishGame, gameData, countdown, pauseCountdownCircle, countdownCircle, rankingRows, usersPoints, restartQuestionPosition));
+        if (answered) return (++questionPosition) + (startNextTurn(userAnswerInput, getLetterPosition, ask, finishGame, gameData, countdown, countdownCircle, usersPoints, restartQuestionPosition));
 
         askAQuestion(ask, choosenQuestion, choosenQuestionIndex);
         selectLetter(letterPosition);
         questionPosition++
     };
 
-    if (checkIfPlaying()) (finishGame(gameData, countdown, pauseCountdownCircle, countdownCircle, ask, rankingRows, usersPoints, restartQuestionPosition));
+    if (checkIfPlaying()) (finishGame(gameData, countdown, countdownCircle, ask, usersPoints, restartQuestionPosition));
 };
 
 const restartQuestionPosition = () => questionPosition = 0;

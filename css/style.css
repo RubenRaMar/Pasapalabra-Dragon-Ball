@@ -62,14 +62,15 @@ html {
 .options {
     margin-top: 1%;
     text-align: center;
-    list-style: none;
     background-color: #000000db;
     border-top: 1px solid #000;
     border-left: 1px solid #000;
     border-right: 1px solid #000;
 }
 
-.options li {
+.options button {
+    all: unset;
+    display: block;
     text-transform: uppercase;
     color: #d4d4d4;
     padding: 11px 0;
@@ -79,7 +80,7 @@ html {
     letter-spacing: 0.07rem;
 }
 
-.options li:hover {
+.options button:hover {
     background-color: #ffffff9e;
     color: #000;
     cursor: pointer;
@@ -793,7 +794,7 @@ circle:nth-child(1) {
         font-size: 3rem;
     }
 
-    .options li {
+    .options button {
         padding: 28px 0;
         width: 545px;
         font-size: 2.1rem;
@@ -857,7 +858,7 @@ circle:nth-child(1) {
         font-size: 1.9rem;
     }
 
-    .options li {
+    .options button {
         padding: 20px 0;
         width: 323px;
         font-size: 1.35rem;
@@ -906,7 +907,7 @@ circle:nth-child(1) {
         font-size: 1.3rem;
     }
 
-    .options li {
+    .options button {
         font-size: 1rem;
         width: 243px;
     }
