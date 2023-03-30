@@ -1,4 +1,4 @@
-import { closeClassificationButton, pasapalabraContainer, classificationContainer, countdownCircle, classificationButton, pasapalabraImage, countdownNumber, backgroundImage, usernameInput, confirmAvatar, restartButton, welcomeScreen, circleAvatar, menuButton, stopButton, pasapalabra, checkImage, userAnswerInput, ask, options, check, getLetterPosition, getSelectedLetter } from './queryselector.js';
+import { closeClassificationButton, pasapalabraContainer, classificationContainer, countdownCircle, classificationButton, pasapalabraImage, countdownNumber, backgroundImage, usernameInput, confirmAvatar, restartButton, welcomeScreen, circleAvatar, menuButton, stopButton, pasapalabra, checkImage, userAnswerInput, ask, options, check, getSelectedLetter } from './queryselector.js';
 import { startNextTurn, restartQuestionPosition } from './startnextturn.js';
 import { handleShowOptionsMenu, handleHideOptionsMenu, handleOpenClassification, handleCloseClassification } from './optionsmenu.js';
 import { registerWelcomeScreenEventsLinteners, registerPasapalabraGameEventListeners } from './registereventlisteners.js';
@@ -67,7 +67,7 @@ const handleDownButtonCheck = (keypress) => {
         checkImage.src = 'images/checked.png';
 
         processUserAnswer(userAnswerInput, gameData, deselectLetter, getSelectedLetter);
-        startNextTurn(userAnswerInput, getLetterPosition, ask, finishGame, gameData, countdown, countdownCircle, usersPoints, restartQuestionPosition);
+        startNextTurn(userAnswerInput, ask, finishGame, gameData, countdown, countdownCircle, usersPoints, restartQuestionPosition);
     };
 };
 
@@ -78,7 +78,7 @@ const handleDownButtonPasapalabra = () => {
     pasapalabraImage.src = 'images/pasapalabred.png';
 
     deselectLetter(gameData, getSelectedLetter);
-    startNextTurn(userAnswerInput, getLetterPosition, ask, finishGame, gameData, countdown, countdownCircle, usersPoints, restartQuestionPosition);
+    startNextTurn(userAnswerInput, ask, finishGame, gameData, countdown, countdownCircle, usersPoints, restartQuestionPosition);
 };
 
 const handleUpbuttonPasapalabra = () => pasapalabraImage.src = 'images/pasapalabra.png';
@@ -111,7 +111,7 @@ const preparePasapalabraGame = () => {
             gameData.isGameOver = false;
             startCountdown(countdownNumber, secondsOfGame, deselectLetter, gameData, getSelectedLetter, finishGame, countdownCircle, ask, usersPoints, restartQuestionPosition);
             registerPasapalabraGameEventListeners(pasapalabra, check, handleDownButtonPasapalabra, handleUpbuttonPasapalabra, handleDownButtonCheck, handleUpbuttonCheck);
-            startNextTurn(userAnswerInput, getLetterPosition, ask, finishGame, gameData, countdown, countdownCircle, usersPoints, restartQuestionPosition);
+            startNextTurn(userAnswerInput, ask, finishGame, gameData, countdown, countdownCircle, usersPoints, restartQuestionPosition);
             clearInterval(preparationTime);
         }
     }, 1000);
