@@ -1,4 +1,6 @@
-const restartAvatarClasses = (avatars, circleAvatar) => {
+import { avatars } from "./queryselector.js";
+
+const restartAvatarClasses = (circleAvatar) => {
     avatars.forEach((avatar) => {
         avatar.classList.remove('selected-avatar');
         avatar.classList.add('avatar');
@@ -11,11 +13,11 @@ const selectedAvatar = (avatar) => {
     avatar.classList.remove('avatar');;
 };
 
-const chooseAvatar = (avatars, circleAvatar) => {
+const chooseAvatar = (circleAvatar) => {
     
     for (let index = 0; index < avatars.length; index++) {
         avatars[index].addEventListener('click', (avatar) => {
-            restartAvatarClasses(avatars, circleAvatar);
+            restartAvatarClasses(circleAvatar);
             selectedAvatar(avatars[index]);
             circleAvatar.src = avatar.target.src;
         });

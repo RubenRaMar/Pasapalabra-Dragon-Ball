@@ -1,9 +1,9 @@
-import { closeClassificationButton, pasapalabraContainer, classificationContainer, countdownCircle, classificationButton, pasapalabraImage, countdownNumber, backgroundImage, usernameInput, confirmAvatar, restartButton, welcomeScreen, circleAvatar, menuButton, stopButton, pasapalabra, checkImage, userAnswerInput, avatars, ask, options, letters, check, getLetterPosition, getSelectedLetter } from './queryselector.js';
+import { closeClassificationButton, pasapalabraContainer, classificationContainer, countdownCircle, classificationButton, pasapalabraImage, countdownNumber, backgroundImage, usernameInput, confirmAvatar, restartButton, welcomeScreen, circleAvatar, menuButton, stopButton, pasapalabra, checkImage, userAnswerInput, ask, options, check, getLetterPosition, getSelectedLetter } from './queryselector.js';
 import { startNextTurn, restartQuestionPosition } from './startnextturn.js';
 import { handleShowOptionsMenu, handleHideOptionsMenu, handleOpenClassification, handleCloseClassification } from './optionsmenu.js';
 import { registerWelcomeScreenEventsLinteners, registerPasapalabraGameEventListeners } from './registereventlisteners.js';
 import { restartAvatarClasses, chooseAvatar } from './chooseavatar.js';
-import { startCountdown, startCountdownCircle, countdown } from './countdown.js';
+import { startCountdown, startCountdownCircle, pauseCountdownCircle, countdown } from './countdown.js';
 import { changeBackgroundImage, restartBackgroundImage } from './changebackgroundimage.js';
 import { hideElementContent, showElementContent } from './showandhideelementcontent.js';
 import { deselectLetter, restartLettersColor } from './changelettercolor.js';
@@ -36,9 +36,9 @@ const handleRestartGame = () => {
         hideElementContent(options);
         hideElementContent(pasapalabraContainer);
         showElementContent(welcomeScreen);
-        restartAvatarClasses(avatars, circleAvatar);
+        restartAvatarClasses(circleAvatar);
         restartBackgroundImage(backgroundImage);
-        restartLettersColor(letters);
+        restartLettersColor();
         restartQuestionPosition();
         restartQuestions();
         deselectLetter(gameData, getSelectedLetter);
@@ -47,7 +47,7 @@ const handleRestartGame = () => {
         userAnswerInput.value = '';
         gameData.answerPoints= 0;
         gameData.username = '';
-        chooseAvatar(avatars, circleAvatar);
+        chooseAvatar(circleAvatar);
     };
 };
 
@@ -118,4 +118,4 @@ const preparePasapalabraGame = () => {
 };
 
 registerWelcomeScreenEventsLinteners(menuButton, stopButton, restartButton, classificationButton, closeClassificationButton, addEventListener, confirmAvatar, handleShowOptionsMenu, handleHideOptionsMenu, handleStopGame, handleRestartGame, handleOpenClassification, handleCloseClassification, handlechooseAvatar);
-chooseAvatar(avatars, circleAvatar);
+chooseAvatar(circleAvatar);
