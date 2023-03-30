@@ -1,11 +1,16 @@
 import { registerPasapalabraGameEventListeners } from "./registereventlisteners.js";
-import { startCountdown, startCountdownCircle } from "./countdown.js";
+import { countdown, startCountdown, startCountdownCircle } from "./countdown.js";
 import { generateUpperCamelCase } from "./generateupperCamelCase.js";
 import { changeBackgroundImage } from "./changebackgroundimage.js";
 import { chooseQuestionForEachLetter } from "./questions.js";
-import { countdownNumber } from "./queryselector.js";
+import { ask, backgroundImage, check, classificationContainer, countdownCircle, countdownNumber, getSelectedLetter, pasapalabra, pasapalabraContainer, userAnswerInput, usernameInput, welcomeScreen } from "./queryselector.js";
+import { hideElementContent, showElementContent } from "./showandhideelementcontent.js";
+import { gameData, handleDownButtonCheck, handleDownButtonPasapalabra, handleUpbuttonCheck, handleUpbuttonPasapalabra, usersPoints } from "./app.js";
+import { deselectLetter } from "./changelettercolor.js";
+import { finishGame } from "./finishgame.js";
+import { restartQuestionPosition, startNextTurn } from "./startnextturn.js";
 
-export const preparePasapalabraGame = (hideElementContent, showElementContent, welcomeScreen, classificationContainer, pasapalabraContainer, backgroundImage, countdownCircle, ask, gameData, usernameInput, deselectLetter, getSelectedLetter, finishGame, restartQuestionPosition, usersPoints, pasapalabra, check, handleDownButtonPasapalabra, handleUpbuttonPasapalabra, handleDownButtonCheck, handleUpbuttonCheck, startNextTurn, userAnswerInput, countdown) => {
+export const preparePasapalabraGame = () => {
 
     let secondsOfPreparation = 3;
     let secondsOfGame = 180;

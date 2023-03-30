@@ -1,4 +1,6 @@
-import { avatars } from "./queryselector.js";
+import { preparePasapalabraGame } from "./preparatepasapalabragame.js";
+import { avatars, confirmAvatar, usernameInput } from "./queryselector.js";
+import { circleAvatar } from "./queryselector.js";
 
 const restartAvatarClasses = (circleAvatar) => {
     avatars.forEach((avatar) => {
@@ -24,4 +26,14 @@ const chooseAvatar = (circleAvatar) => {
     };
 };
 
-export { restartAvatarClasses, chooseAvatar };
+const handleChooseAvatar = (keypress) => {
+    if (keypress.key === 'Enter' || keypress.type === 'mousedown') {
+        if (!circleAvatar.src.includes("empty") && usernameInput.value) {
+            removeEventListener('keydown', handleChooseAvatar);
+            confirmAvatar.removeEventListener('mousedown', handleChooseAvatar);
+            preparePasapalabraGame();
+        };
+    };
+};
+
+export { restartAvatarClasses, chooseAvatar, handleChooseAvatar };
