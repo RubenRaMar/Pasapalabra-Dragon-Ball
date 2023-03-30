@@ -1,9 +1,10 @@
-export const processUserAnswer = (checkIfTheAnswerIsCorrect, choosenQuestion, choosenQuestionIndex, userAnswerInput, answerPoints, changeLetterColor, letterPosition, getAnwerPoints, deselectLetter, gameOver, getSelectedLetter) => {
+export const processUserAnswer = (checkIfTheAnswerIsCorrect, choosenQuestion, choosenQuestionIndex, userAnswerInput, gameData, changeLetterColor, letterPosition, getAnwerPoints, deselectLetter, getSelectedLetter) => {
 
     const isCorrectAnswer = checkIfTheAnswerIsCorrect(choosenQuestion.answer, choosenQuestionIndex, userAnswerInput)
 
     changeLetterColor(isCorrectAnswer, letterPosition);
     
-    deselectLetter(gameOver, getSelectedLetter);
-    return [answerPoints += getAnwerPoints(isCorrectAnswer), true];
+    deselectLetter(gameData.isGameOver, getSelectedLetter);
+    gameData.answerPoints += getAnwerPoints(isCorrectAnswer);
+    choosenQuestion.answered = true;
 };

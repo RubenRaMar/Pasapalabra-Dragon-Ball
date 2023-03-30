@@ -1,6 +1,6 @@
 let countdown;
 
-const startCountdown = (countdownNumber, secondsOfGame, deselectLetter, gameOver, getSelectedLetter, finishGame) => {
+const startCountdown = (countdownNumber, secondsOfGame, deselectLetter, gameData, getSelectedLetter, finishGame, countdownCircle, ask, generateRanking, rankingRows, usersPoints, restartQuestionPosition) => {
 
     countdownNumber.innerHTML = secondsOfGame;
 
@@ -11,8 +11,8 @@ const startCountdown = (countdownNumber, secondsOfGame, deselectLetter, gameOver
 
         if (+countdownNumber.innerHTML === 0) {
             clearInterval(countdown);
-            deselectLetter(gameOver, getSelectedLetter);
-            finishGame();
+            deselectLetter(gameData.isGameOver, getSelectedLetter);
+            finishGame(gameData, countdown, pauseCountdownCircle, countdownCircle, ask, generateRanking, rankingRows, usersPoints, restartQuestionPosition);
         };
     }, 1000);
 };

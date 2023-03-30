@@ -4,12 +4,12 @@ class GetUserData {
     };
 };
 
-export const generateRanking = (username, answerPoints, rankingRows, usersPoints) => {
+export const generateRanking = (gameData, rankingRows, usersPoints) => {
     let rankingPosition = 0;
 
-    if (username.length > 30) username = username.slice(0, 31) + '...';
+    if (gameData.username.length > 30) gameData.username = username.slice(0, 31) + '...';
 
-    new GetUserData(username, answerPoints, usersPoints);
+    new GetUserData(gameData.username, gameData.answerPoints, usersPoints);
 
     usersPoints.sort((a, b) => (b.answerPoints - a.answerPoints));
 

@@ -1,7 +1,7 @@
 const selectLetter = (letterPosition) => letterPosition.classList.add('selected-letter');
 
-const deselectLetter = (gameOver, getSelectedLetter) => {
-    if (!gameOver) getSelectedLetter().classList.remove('selected-letter');
+const deselectLetter = (gameData, getSelectedLetter) => {
+    if (!gameData.isGameOver) getSelectedLetter().classList.remove('selected-letter');
 };
 
 const restartLettersColor = (letters) => {

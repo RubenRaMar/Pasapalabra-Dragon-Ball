@@ -14,22 +14,25 @@ import { processUserAnswer } from './processuseranswer.js';
 import { generateRanking } from './generateranking.js';
 import { removeButtons } from './removebuttons.js';
 import { askAQuestion } from './askaquetion.js';
+import { finishGame } from './finishgame.js';
 
 let usersPoints = [];
 
 const startPasapalabraGame = () => {
 
-    let gameOver     = true;
-    let answerPoints = 0
-    let username;
+    const gameData     = {
+        username: '',
+        answerPoints: 0,
+        isGameOver: true,
+    }
 
     const handleStopGame = () => {
-        if (!gameOver) deselectLetter(gameOver, getSelectedLetter);
-        finishGame();
+        if (!gameData.isGameOver) deselectLetter(gameData, getSelectedLetter);
+        finishGame(gameData, countdown, pauseCountdownCircle, countdownCircle, ask, generateRanking, rankingRows, usersPoints, restartQuestionPosition);
     };
 
     const handleRestartGame = () => {
-        if (username) {
+        if (gameData.username) {
             removeButtons(menuButton, stopButton, restartButton, classificationButton, closeClassificationButton, pasapalabra, check, handleShowOptionsMenu, handleHideOptionsMenu, handleStopGame, handleRestartGame, handleOpenClassification, handleCloseClassification, handleDownButtonPasapalabra, handleUpbuttonPasapalabra, handleDownButtonCheck, handleUpbuttonCheck);
             hideElementContent(classificationContainer);
             hideElementContent(options);
@@ -40,10 +43,10 @@ const startPasapalabraGame = () => {
             restartLettersColor(letters);
             restartQuestionPosition();
             restartQuestions();
-            deselectLetter(gameOver, getSelectedLetter);
+            deselectLetter(gameData, getSelectedLetter);
             userAnswerInput.value = '';
             clearInterval(countdown);
-            gameOver = true;
+            gameData.isGameOver = true;
             startPasapalabraGame();
         };
     };
@@ -54,44 +57,33 @@ const startPasapalabraGame = () => {
                 removeEventListener('keydown', handleSetAvatarAndUsername);
                 confirmAvatar.removeEventListener('mousedown', handleSetAvatarAndUsername);
 
-                username = (generateUpperCamelCase(usernameInput.value));
+                gameData.username = (generateUpperCamelCase(usernameInput.value));
                 return preparePasapalabraGame();
             };
         };
     };
 
     const handleDownButtonCheck = (keypress) => {
-        if (gameOver) return check.removeEventListener('mousedown', handleDownButtonCheck);
+        if (gameData.isGameOver) return check.removeEventListener('mousedown', handleDownButtonCheck);
         if (keypress.key === 'Enter' || keypress.type === 'mousedown') {
             checkImage.src = 'images/checked.png';
-            [answerPoints, choosenQuestion.answered] = processUserAnswer(checkIfTheAnswerIsCorrect, choosenQuestion, choosenQuestionIndex, userAnswerInput, answerPoints, changeLetterColor, letterPosition, getAnwerPoints, deselectLetter, gameOver, getSelectedLetter);
-            startNextTurn(userAnswerInput, getLetterPosition, questions, askAQuestion, ask, selectLetter, finishGame);
+            
+            processUserAnswer(checkIfTheAnswerIsCorrect, choosenQuestion, choosenQuestionIndex, userAnswerInput, gameData, changeLetterColor, letterPosition, getAnwerPoints, deselectLetter, getSelectedLetter);     
+            startNextTurn(userAnswerInput, getLetterPosition, questions, askAQuestion, ask, selectLetter, finishGame, gameData, countdown, pauseCountdownCircle, countdownCircle, generateRanking, rankingRows, usersPoints, restartQuestionPosition);
         };
     };
 
     const handleUpbuttonCheck = () => checkImage.src = 'images/check.png';
 
     const handleDownButtonPasapalabra = () => {
-        if (gameOver) return pasapalabra.removeEventListener('mousedown', handleDownButtonPasapalabra);
+        if (gameData.isGameOver) return pasapalabra.removeEventListener('mousedown', handleDownButtonPasapalabra);
         pasapalabraImage.src = 'images/pasapalabred.png';
 
-        deselectLetter(gameOver, getSelectedLetter);
-        startNextTurn(userAnswerInput, getLetterPosition, questions, askAQuestion, ask, selectLetter, finishGame);
+        deselectLetter(gameData, getSelectedLetter);
+        startNextTurn(userAnswerInput, getLetterPosition, questions, askAQuestion, ask, selectLetter, finishGame, gameData, countdown, pauseCountdownCircle, countdownCircle, generateRanking, rankingRows, usersPoints, restartQuestionPosition);
     };
 
     const handleUpbuttonPasapalabra = () => pasapalabraImage.src = 'images/pasapalabra.png';
-
-    const finishGame = () => {
-
-        if (!gameOver) {
-            clearInterval(countdown);
-            pauseCountdownCircle(countdownCircle);
-            ask.innerHTML = `<span class = 'letter'>Final</span><span class = 'letter-question'>Bien jugado ${username}! Has conseguido un total de ${answerPoints} puntos.</span>`;
-            generateRanking(username, answerPoints, rankingRows, usersPoints);
-            restartQuestionPosition();
-            gameOver = true;
-        };
-    };
 
     const preparePasapalabraGame = () => {
 
@@ -116,10 +108,10 @@ const startPasapalabraGame = () => {
             ask.innerHTML = `<span class = 'letter'>Preparate</span><span class = 'letter-question'>${secondsOfPreparation}</span>`;
 
             if (secondsOfPreparation <= 0) {
-                gameOver = false;
-                startCountdown(countdownNumber, secondsOfGame, deselectLetter, gameOver, getSelectedLetter, finishGame);
+                gameData.isGameOver = false;
+                startCountdown(countdownNumber, secondsOfGame, deselectLetter, gameData, getSelectedLetter, finishGame, countdownCircle, ask, generateRanking, rankingRows, usersPoints, restartQuestionPosition);
                 registerPasapalabraGameEventListeners(pasapalabra, check, handleDownButtonPasapalabra, handleUpbuttonPasapalabra, handleDownButtonCheck, handleUpbuttonCheck);
-                startNextTurn(userAnswerInput, getLetterPosition, questions, askAQuestion, ask, selectLetter, finishGame);
+                startNextTurn(userAnswerInput, getLetterPosition, questions, askAQuestion, ask, selectLetter, finishGame, gameData, countdown, pauseCountdownCircle, countdownCircle, generateRanking, rankingRows, usersPoints, restartQuestionPosition);
                 clearInterval(preparationTime);
             }
         }, 1000);
