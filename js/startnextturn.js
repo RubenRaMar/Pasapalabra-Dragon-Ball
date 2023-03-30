@@ -4,36 +4,40 @@ import { selectLetter } from './changelettercolor.js';
 import { getLetterPosition } from './queryselector.js';
 
 
-let choosenQuestionIndex = '',
-    choosenQuestion      = '',
-    answered             = '',
-    questionPosition     = 0,
-    letterPosition       = 0;
+const questionData = {
+    choosenQuestionIndex : '',
+    choosenQuestion      : '',
+    answered             : '',
+    questionPosition     : 0,
+    letterPosition       : 0,
+}
+
+
 
 const checkIfPlaying = () => questions.every((question) => question.answered);
 
-const startNextTurn = (userAnswerInput, ask, finishGame, gameData, countdown, countdownCircle, usersPoints, restartQuestionPosition) => {
+const startNextTurn = (userAnswerInput, ask, finishGame, gameData, countdown, countdownCircle, restartQuestionPosition) => {
 
     userAnswerInput.value = '';
-    if (questionPosition === 27) questionPosition = 0;
+    if (questionData.questionPosition === 27) questionData.questionPosition = 0;
 
-    letterPosition = getLetterPosition(questionPosition);
-    choosenQuestion = questions[questionPosition];
-    choosenQuestionIndex = choosenQuestion.questionIndex;
-    answered = choosenQuestion.answered;
+    questionData.letterPosition = getLetterPosition(questionData.questionPosition);
+    questionData.choosenQuestion = questions[questionData.questionPosition];
+    questionData.choosenQuestionIndex = questionData.choosenQuestion.questionIndex;
+    questionData.answered = questionData.choosenQuestion.answered;
 
     if ((!checkIfPlaying())) {
 
-        if (answered) return (++questionPosition) + (startNextTurn(userAnswerInput, ask, finishGame, gameData, countdown, countdownCircle, usersPoints, restartQuestionPosition));
+        if (questionData.answered) return (questionData.questionPosition++) + (startNextTurn(userAnswerInput, ask, finishGame, gameData, countdown, countdownCircle, restartQuestionPosition));
 
-        askAQuestion(ask, choosenQuestion, choosenQuestionIndex);
-        selectLetter(letterPosition);
-        questionPosition++
+        askAQuestion(ask, questionData.choosenQuestion, questionData.choosenQuestionIndex);
+        selectLetter(questionData.letterPosition);
+        questionData.questionPosition++
     };
 
-    if (checkIfPlaying()) (finishGame(gameData, countdown, countdownCircle, ask, usersPoints, restartQuestionPosition));
+    if (checkIfPlaying()) (finishGame(gameData, countdown, countdownCircle, ask, restartQuestionPosition));
 };
 
-const restartQuestionPosition = () => questionPosition = 0;
+const restartQuestionPosition = () => questionData.questionPosition = 0;
 
-export { startNextTurn, choosenQuestion, choosenQuestionIndex, letterPosition, restartQuestionPosition };
+export { startNextTurn, restartQuestionPosition, questionData };

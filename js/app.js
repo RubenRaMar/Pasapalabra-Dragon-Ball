@@ -4,16 +4,15 @@ import { registerWelcomeScreenEventsLinteners } from './registereventlisteners.j
 import { countdown } from './countdown.js';
 import { deselectLetter } from './changelettercolor.js';
 import { startNextTurn, restartQuestionPosition } from './startnextturn.js';
-import { chooseAvatar, handleChooseAvatar } from './chooseavatar.js';
+import { chooseAvatar, handleChooseAvatar } from './getavatarchoose.js';
 import { processUserAnswer } from './processuseranswer.js';
 import { finishGame } from './finishgame.js';
-
-let usersPoints = [];
 
 const gameData = {
     username: '',
     answerPoints: 0,
     isGameOver: true,
+    usersPoints: []
 }
 
 const handleDownButtonCheck = (keypress) => {
@@ -22,7 +21,7 @@ const handleDownButtonCheck = (keypress) => {
         checkImage.src = 'images/checked.png';
 
         processUserAnswer(userAnswerInput, gameData, deselectLetter, getSelectedLetter);
-        startNextTurn(userAnswerInput, ask, finishGame, gameData, countdown, countdownCircle, usersPoints, restartQuestionPosition);
+        startNextTurn(userAnswerInput, ask, finishGame, gameData, countdown, countdownCircle, restartQuestionPosition);
     };
 };
 
@@ -33,7 +32,7 @@ const handleDownButtonPasapalabra = () => {
     pasapalabraImage.src = 'images/pasapalabred.png';
 
     deselectLetter(gameData, getSelectedLetter);
-    startNextTurn(userAnswerInput, ask, finishGame, gameData, countdown, countdownCircle, usersPoints, restartQuestionPosition);
+    startNextTurn(userAnswerInput, ask, finishGame, gameData, countdown, countdownCircle, restartQuestionPosition);
 };
 
 const handleUpbuttonPasapalabra = () => pasapalabraImage.src = 'images/pasapalabra.png';
@@ -41,4 +40,4 @@ const handleUpbuttonPasapalabra = () => pasapalabraImage.src = 'images/pasapalab
 registerWelcomeScreenEventsLinteners(menuButton, stopButton, restartButton, classificationButton, closeClassificationButton, addEventListener, confirmAvatar, handleShowOptionsMenu, handleHideOptionsMenu, handleStopGame, handleRestartGame, handleOpenClassification, handleCloseClassification, handleChooseAvatar);
 chooseAvatar(circleAvatar);
 
-export { gameData , handleDownButtonCheck, handleUpbuttonCheck, handleDownButtonPasapalabra,  handleUpbuttonPasapalabra, usersPoints };
+export { gameData , handleDownButtonCheck, handleUpbuttonCheck, handleDownButtonPasapalabra,  handleUpbuttonPasapalabra };

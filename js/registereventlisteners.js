@@ -1,4 +1,4 @@
-const registerWelcomeScreenEventsLinteners = (menuButton, stopButton, restartButton, classificationButton, closeClassificationButton, addEventListener, confirmAvatar, handleShowOptionsMenu, handleHideOptionsMenu, handleStopGame, handleRestartGame, handleOpenClassification, handleCloseClassification, handleSetAvatarAndUsername) => {
+const registerWelcomeScreenEventsLinteners = (menuButton, stopButton, restartButton, classificationButton, closeClassificationButton, addEventListener, confirmAvatar, handleShowOptionsMenu, handleHideOptionsMenu, handleStopGame, handleRestartGame, handleOpenClassification, handleCloseClassification, handleChooseAvatar) => {
    
     menuButton.addEventListener('mouseover', handleShowOptionsMenu);
     menuButton.addEventListener('mouseout', handleHideOptionsMenu);
@@ -9,8 +9,8 @@ const registerWelcomeScreenEventsLinteners = (menuButton, stopButton, restartBut
     stopButton.addEventListener('click', handleStopGame);
     restartButton.addEventListener('click', handleRestartGame);
    
-    confirmAvatar.addEventListener('mousedown', handleSetAvatarAndUsername);
-    addEventListener('keydown', handleSetAvatarAndUsername);
+    confirmAvatar.addEventListener('mousedown', handleChooseAvatar);
+    addEventListener('keydown', handleChooseAvatar);
 };
 
 const registerPasapalabraGameEventListeners = (pasapalabra, check, handleDownButtonPasapalabra, handleUpbuttonPasapalabra, handleDownButtonCheck, handleUpbuttonCheck) => {

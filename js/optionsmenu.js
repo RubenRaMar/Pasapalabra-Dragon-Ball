@@ -1,10 +1,10 @@
 
 import { closeClassificationButton, pasapalabraContainer, classificationContainer, countdownCircle, classificationButton, backgroundImage, confirmAvatar, restartButton, welcomeScreen, circleAvatar, menuButton, stopButton, pasapalabra, userAnswerInput, ask, options, check, getSelectedLetter } from './queryselector.js';
-import { gameData, handleDownButtonCheck, handleUpbuttonCheck, handleDownButtonPasapalabra,  handleUpbuttonPasapalabra, usersPoints } from "./app.js";
+import { gameData, handleDownButtonCheck, handleUpbuttonCheck, handleDownButtonPasapalabra,  handleUpbuttonPasapalabra } from "./app.js";
 import { hideElementContent, showElementContent } from './showandhideelementcontent.js';
 import { registerWelcomeScreenEventsLinteners } from './registereventlisteners.js';
 import { deselectLetter, restartLettersColor } from './changelettercolor.js';
-import { restartAvatarClasses, chooseAvatar, handleChooseAvatar } from './chooseavatar.js';
+import { restartAvatarClasses, chooseAvatar, handleChooseAvatar } from './getavatarchoose.js';
 import { restartBackgroundImage } from './changebackgroundimage.js';
 import { restartQuestionPosition } from './startnextturn.js';
 import { removeButtons } from './removebuttons.js';
@@ -24,7 +24,7 @@ const handleHideOptionsMenu     = () => hideElementContent(options);
 const handleStopGame = () => {
     if (!gameData.isGameOver) {
         deselectLetter(gameData, getSelectedLetter);
-        finishGame(gameData, countdown, countdownCircle, ask, usersPoints, restartQuestionPosition);
+        finishGame(gameData, countdown, countdownCircle, ask, restartQuestionPosition);
     };
 };
 

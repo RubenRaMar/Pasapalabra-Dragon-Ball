@@ -1,13 +1,13 @@
 import { checkIfTheAnswerIsCorrect, getAnwerPoints, changeLetterColor } from './processanswer.js';
-import { choosenQuestion, choosenQuestionIndex, letterPosition } from './startnextturn.js';
+import { questionData } from './startnextturn.js';
 
 export const processUserAnswer = (userAnswerInput, gameData, deselectLetter, getSelectedLetter) => {
 
-    const isCorrectAnswer = checkIfTheAnswerIsCorrect(choosenQuestion.answer, choosenQuestionIndex, userAnswerInput)
+    const isCorrectAnswer = checkIfTheAnswerIsCorrect(questionData.choosenQuestion.answer, questionData.choosenQuestionIndex, userAnswerInput)
 
-    changeLetterColor(isCorrectAnswer, letterPosition);
+    changeLetterColor(isCorrectAnswer, questionData.letterPosition);
     
     deselectLetter(gameData.isGameOver, getSelectedLetter);
     gameData.answerPoints += getAnwerPoints(isCorrectAnswer);
-    choosenQuestion.answered = true;
+    questionData.choosenQuestion.answered = true;
 };
