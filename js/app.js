@@ -1,14 +1,14 @@
-import { closeClassificationButton, pasapalabraContainer, classificationContainer, countdownCircle, classificationButton, pasapalabraImage, countdownNumber, backgroundImage, usernameInput, confirmAvatar, restartButton, welcomeScreen, circleAvatar, menuButton, stopButton, pasapalabra, checkImage, userAnswerInput, ask, options, check, getSelectedLetter } from './queryselector.js';
-import { startNextTurn, restartQuestionPosition } from './startnextturn.js';
+import { closeClassificationButton, pasapalabraContainer, classificationContainer, countdownCircle, classificationButton, pasapalabraImage, backgroundImage, usernameInput, confirmAvatar, restartButton, welcomeScreen, circleAvatar, menuButton, stopButton, pasapalabra, checkImage, userAnswerInput, ask, options, check, getSelectedLetter } from './queryselector.js';
 import { handleShowOptionsMenu, handleHideOptionsMenu, handleOpenClassification, handleCloseClassification } from './optionsmenu.js';
-import { registerWelcomeScreenEventsLinteners, registerPasapalabraGameEventListeners } from './registereventlisteners.js';
-import { restartAvatarClasses, chooseAvatar } from './chooseavatar.js';
-import { startCountdown, startCountdownCircle, pauseCountdownCircle, countdown } from './countdown.js';
-import { changeBackgroundImage, restartBackgroundImage } from './changebackgroundimage.js';
+import { registerWelcomeScreenEventsLinteners } from './registereventlisteners.js';
+import { countdown } from './countdown.js';
+import { restartBackgroundImage } from './changebackgroundimage.js';
 import { hideElementContent, showElementContent } from './showandhideelementcontent.js';
 import { deselectLetter, restartLettersColor } from './changelettercolor.js';
-import { restartQuestions, chooseQuestionForEachLetter } from './questions.js';
-import { generateUpperCamelCase } from './generateupperCamelCase.js';
+import { restartQuestions } from './questions.js';
+import { startNextTurn, restartQuestionPosition } from './startnextturn.js';
+import { restartAvatarClasses, chooseAvatar } from './chooseavatar.js';
+import { preparePasapalabraGame } from './preparatepasapalabragame.js';
 import { processUserAnswer } from './processuseranswer.js';
 import { removeButtons } from './removebuttons.js';
 import { finishGame } from './finishgame.js';
@@ -56,7 +56,7 @@ const handlechooseAvatar = (keypress) => {
         if (!circleAvatar.src.includes("empty") && usernameInput.value) {
             removeEventListener('keydown', handlechooseAvatar);
             confirmAvatar.removeEventListener('mousedown', handlechooseAvatar);
-            return preparePasapalabraGame();
+            return preparePasapalabraGame(hideElementContent, showElementContent, welcomeScreen, classificationContainer, pasapalabraContainer, backgroundImage, countdownCircle, ask, gameData, usernameInput, deselectLetter, getSelectedLetter, finishGame, restartQuestionPosition, usersPoints, pasapalabra, check, handleDownButtonPasapalabra, handleUpbuttonPasapalabra, handleDownButtonCheck, handleUpbuttonCheck, startNextTurn, userAnswerInput, countdown);
         };
     };
 };
@@ -82,40 +82,6 @@ const handleDownButtonPasapalabra = () => {
 };
 
 const handleUpbuttonPasapalabra = () => pasapalabraImage.src = 'images/pasapalabra.png';
-
-const preparePasapalabraGame = () => {
-
-    let secondsOfPreparation = 3;
-    let secondsOfGame = 180;
-
-    countdownNumber.innerHTML = secondsOfGame;
-
-    hideElementContent(welcomeScreen);
-    hideElementContent(classificationContainer);
-    showElementContent(pasapalabraContainer);
-    changeBackgroundImage(backgroundImage);
-    startCountdownCircle(countdownCircle);
-    chooseQuestionForEachLetter();
-
-    ask.innerHTML = `<span class = 'letter'>Preparate</span><span class = 'letter-question'>${secondsOfPreparation}</span>`;
-
-    const preparationTime = setInterval(() => {
-
-        --secondsOfPreparation;
-
-        ask.innerHTML = `<span class = 'letter'>Preparate</span><span class = 'letter-question'>${secondsOfPreparation}</span>`;
-
-        if (secondsOfPreparation <= 0) {
-            gameData.username = (generateUpperCamelCase(usernameInput.value));
-            usernameInput.value = '';
-            gameData.isGameOver = false;
-            startCountdown(countdownNumber, secondsOfGame, deselectLetter, gameData, getSelectedLetter, finishGame, countdownCircle, ask, usersPoints, restartQuestionPosition);
-            registerPasapalabraGameEventListeners(pasapalabra, check, handleDownButtonPasapalabra, handleUpbuttonPasapalabra, handleDownButtonCheck, handleUpbuttonCheck);
-            startNextTurn(userAnswerInput, ask, finishGame, gameData, countdown, countdownCircle, usersPoints, restartQuestionPosition);
-            clearInterval(preparationTime);
-        }
-    }, 1000);
-};
 
 registerWelcomeScreenEventsLinteners(menuButton, stopButton, restartButton, classificationButton, closeClassificationButton, addEventListener, confirmAvatar, handleShowOptionsMenu, handleHideOptionsMenu, handleStopGame, handleRestartGame, handleOpenClassification, handleCloseClassification, handlechooseAvatar);
 chooseAvatar(circleAvatar);

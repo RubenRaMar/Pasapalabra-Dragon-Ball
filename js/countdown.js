@@ -12,7 +12,7 @@ const startCountdown = (countdownNumber, secondsOfGame, deselectLetter, gameData
         if (+countdownNumber.innerHTML === 0) {
             clearInterval(countdown);
             deselectLetter(gameData.isGameOver, getSelectedLetter);
-            finishGame(gameData, countdown, pauseCountdownCircle, countdownCircle, ask, usersPoints, restartQuestionPosition);
+            finishGame(gameData, countdown, countdownCircle, ask, usersPoints, restartQuestionPosition);
         };
     }, 1000);
 };
