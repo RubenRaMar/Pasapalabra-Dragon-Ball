@@ -1,4 +1,7 @@
-export const processUserAnswer = (checkIfTheAnswerIsCorrect, choosenQuestion, choosenQuestionIndex, userAnswerInput, gameData, changeLetterColor, letterPosition, getAnwerPoints, deselectLetter, getSelectedLetter) => {
+import { checkIfTheAnswerIsCorrect, getAnwerPoints, changeLetterColor } from './processanswer.js';
+import { choosenQuestion, choosenQuestionIndex, letterPosition } from './startnextturn.js';
+
+export const processUserAnswer = (userAnswerInput, gameData, deselectLetter, getSelectedLetter) => {
 
     const isCorrectAnswer = checkIfTheAnswerIsCorrect(choosenQuestion.answer, choosenQuestionIndex, userAnswerInput)
 

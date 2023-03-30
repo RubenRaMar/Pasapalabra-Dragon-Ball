@@ -412,4 +412,6 @@ const restartQuestions = () => {
     });
 };
 
-export { questions, restartQuestions };
+const chooseQuestionForEachLetter = () => questions.forEach((question) => question.questionIndex = Math.round(Math.random() * 2));
+
+export { questions, restartQuestions, chooseQuestionForEachLetter };

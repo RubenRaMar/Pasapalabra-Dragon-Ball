@@ -1,4 +1,7 @@
-export const finishGame = (gameData, countdown, pauseCountdownCircle, countdownCircle, ask, generateRanking, rankingRows, usersPoints, restartQuestionPosition) => {
+import { generateRanking } from './generateranking.js';
+
+
+export const finishGame = (gameData, countdown, pauseCountdownCircle, countdownCircle, ask, rankingRows, usersPoints, restartQuestionPosition) => {
 
     if (!gameData.isGameOver) {
         clearInterval(countdown);

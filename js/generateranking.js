@@ -7,7 +7,7 @@ class GetUserData {
 export const generateRanking = (gameData, rankingRows, usersPoints) => {
     let rankingPosition = 0;
 
-    if (gameData.username.length > 30) gameData.username = username.slice(0, 31) + '...';
+    if (gameData.username.length > 30) gameData.username = gameData.username.slice(0, 31) + '...';
 
     new GetUserData(gameData.username, gameData.answerPoints, usersPoints);
 
