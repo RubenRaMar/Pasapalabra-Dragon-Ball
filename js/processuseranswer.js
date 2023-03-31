@@ -1,5 +1,5 @@
 import { changeLetterColor, deselectLetter } from './changelettercolor.js';
-import { userAnswerInput } from './queryselector.js';
+import { userAnswerInput } from './registerqueryselector.js';
 import { questionData } from './startnextturn.js';
 import { gameData } from './app.js';
 

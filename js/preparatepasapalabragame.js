@@ -1,6 +1,6 @@
-import { ask, classificationContainer, countdownNumber, pasapalabraContainer, usernameInput, welcomeScreen } from "./queryselector.js";
+import { ask, classificationContainer, countdownNumber, pasapalabraContainer, usernameInput, welcomeScreen } from "./registerqueryselector.js";
 import { hideElementContent, showElementContent } from "./showandhideelementcontent.js";
-import { registerPasapalabraGameEventListeners } from "./registereventlisteners.js";
+import { registerPasapalabraGameEventListeners } from "./registerbuttons.js";
 import { startCountdown, startCountdownCircle } from "./countdown.js";
 import { generateUpperCamelCase } from "./generateupperCamelCase.js";
 import { chooseQuestionForEachLetter } from "./setquestiondata.js";

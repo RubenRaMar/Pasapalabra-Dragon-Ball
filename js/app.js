@@ -1,5 +1,5 @@
 
-import { registerWelcomeScreenEventsLinteners } from './registereventlisteners.js';
+import { registerWelcomeScreenEventsLinteners } from './registerbuttons.js';
 import { chooseAvatar } from './getavatarchoose.js';
 
 const gameData = {

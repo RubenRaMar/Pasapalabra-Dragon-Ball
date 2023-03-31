@@ -1,7 +1,7 @@
 import { gameData } from "./app.js";
 import { deselectLetter } from "./changelettercolor.js";
 import { processUserAnswer } from "./processuseranswer.js";
-import { check, checkImage, pasapalabra, pasapalabraImage } from "./queryselector.js";
+import { check, checkImage, pasapalabra, pasapalabraImage } from "./registerqueryselector.js";
 import { startNextTurn } from "./startnextturn.js";
 
 const handleDownButtonCheck = (keypress) => {

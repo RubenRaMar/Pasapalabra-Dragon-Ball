@@ -1,8 +1,8 @@
 
-import { pasapalabraContainer, classificationContainer, welcomeScreen, userAnswerInput, options } from './queryselector.js';
+import { pasapalabraContainer, classificationContainer, welcomeScreen, userAnswerInput, options } from './registerqueryselector.js';
 import { gameData} from "./app.js";
 import { hideElementContent, showElementContent } from './showandhideelementcontent.js';
-import { registerWelcomeScreenEventsLinteners } from './registereventlisteners.js';
+import { registerWelcomeScreenEventsLinteners } from './registerbuttons.js';
 import { deselectLetter, restartLettersColor } from './changelettercolor.js';
 import { restartAvatarClasses, chooseAvatar } from './getavatarchoose.js';
 import { restartBackgroundImage } from './changebackgroundimage.js';

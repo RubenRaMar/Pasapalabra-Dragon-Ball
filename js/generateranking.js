@@ -1,4 +1,4 @@
-import { rankingRows } from "./queryselector.js";
+import { rankingRows } from "./registerqueryselector.js";
 
 class GetUserData {
     constructor(username, answerPoints, usersPoints) {

@@ -1,4 +1,4 @@
-import { getSelectedLetter, letters } from "./queryselector.js";
+import { getSelectedLetter, letters } from "./registerqueryselector.js";
 import { gameData } from "./app.js";
 
 const selectLetter = (letterPosition) => letterPosition.classList.add('selected-letter');

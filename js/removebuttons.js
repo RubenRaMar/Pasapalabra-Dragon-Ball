@@ -1,5 +1,5 @@
 import { handleCloseClassification, handleHideOptionsMenu, handleOpenClassification, handleRestartGame, handleShowOptionsMenu, handleStopGame } from "./optionsmenu.js";
-import { check, classificationButton, closeClassificationButton, menuButton, pasapalabra, restartButton, stopButton } from "./queryselector.js";
+import { check, classificationButton, closeClassificationButton, menuButton, pasapalabra, restartButton, stopButton } from "./registerqueryselector.js";
 import { handleDownButtonCheck, handleDownButtonPasapalabra, handleUpbuttonCheck, handleUpbuttonPasapalabra } from "./getuseranswer.js";
 
 const removeButtons = () => {

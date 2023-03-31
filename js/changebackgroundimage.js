@@ -1,4 +1,4 @@
-import { backgroundImage } from "./queryselector.js";
+import { backgroundImage } from "./registerqueryselector.js";
 
 const changeBackgroundImage = () => (backgroundImage.classList.remove('background-image')) + (backgroundImage.classList.add('tournament-background-image'));
 

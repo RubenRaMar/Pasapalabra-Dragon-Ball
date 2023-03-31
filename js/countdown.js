@@ -1,4 +1,4 @@
-import { countdownCircle, countdownNumber } from "./queryselector.js";
+import { countdownCircle, countdownNumber } from "./registerqueryselector.js";
 import { deselectLetter } from "./changelettercolor.js";
 import { finishGame } from "./finishgame.js";
 

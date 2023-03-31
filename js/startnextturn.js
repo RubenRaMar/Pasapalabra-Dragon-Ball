@@ -1,4 +1,4 @@
-import { ask, userAnswerInput } from './queryselector.js';
+import { ask, userAnswerInput } from './registerqueryselector.js';
 import { setQuestionData } from './setquestiondata.js';
 import { selectLetter } from './changelettercolor.js';
 import { askAQuestion } from './askaquetion.js';
@@ -17,7 +17,7 @@ const startNextTurn = () => {
 
     userAnswerInput.value = '';
     if (questionData.questionPosition === 27) questionData.questionPosition = 0;  
-    setQuestionData(questionData, questions)
+    setQuestionData()
 
     if ((!checkIfPlaying())) {
         if (questionData.answered) return (questionData.questionPosition++) + (startNextTurn());

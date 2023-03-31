@@ -1,6 +1,6 @@
-import { avatars, confirmAvatar, usernameInput } from "./queryselector.js";
+import { avatars, confirmAvatar, usernameInput } from "./registerqueryselector.js";
 import { preparePasapalabraGame } from "./preparatepasapalabragame.js";
-import { circleAvatar } from "./queryselector.js";
+import { circleAvatar } from "./registerqueryselector.js";
 
 const restartAvatarClasses = () => {
     avatars.forEach((avatar) => {
