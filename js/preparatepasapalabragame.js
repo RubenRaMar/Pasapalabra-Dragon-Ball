@@ -1,28 +1,25 @@
-import { registerPasapalabraGameEventListeners } from "./registereventlisteners.js";
-import { countdown, startCountdown, startCountdownCircle } from "./countdown.js";
-import { generateUpperCamelCase } from "./generateupperCamelCase.js";
-import { changeBackgroundImage } from "./changebackgroundimage.js";
-import { chooseQuestionForEachLetter } from "./questions.js";
-import { ask, backgroundImage, check, classificationContainer, countdownCircle, countdownNumber, getSelectedLetter, pasapalabra, pasapalabraContainer, userAnswerInput, usernameInput, welcomeScreen } from "./queryselector.js";
+import { ask, classificationContainer, countdownNumber, pasapalabraContainer, usernameInput, welcomeScreen } from "./queryselector.js";
 import { hideElementContent, showElementContent } from "./showandhideelementcontent.js";
-import { gameData, handleDownButtonCheck, handleDownButtonPasapalabra, handleUpbuttonCheck, handleUpbuttonPasapalabra } from "./app.js";
-import { deselectLetter } from "./changelettercolor.js";
-import { finishGame } from "./finishgame.js";
-import { restartQuestionPosition, startNextTurn } from "./startnextturn.js";
+import { registerPasapalabraGameEventListeners } from "./registereventlisteners.js";
+import { startCountdown, startCountdownCircle } from "./countdown.js";
+import { generateUpperCamelCase } from "./generateupperCamelCase.js";
+import { chooseQuestionForEachLetter } from "./setquestiondata.js";
+import { changeBackgroundImage } from "./changebackgroundimage.js"
+import { startNextTurn } from "./startnextturn.js";
+import { gameData } from "./app.js";
 
-export const preparePasapalabraGame = () => {
+const preparePasapalabraGame = () => {
 
-    let secondsOfPreparation = 3;
-    let secondsOfGame = 180;
+    let secondsOfPreparation  = 3;
+    let secondsOfGame         = 180;
 
     countdownNumber.innerHTML = secondsOfGame;
-
-    hideElementContent(welcomeScreen);
     hideElementContent(classificationContainer);
     showElementContent(pasapalabraContainer);
-    changeBackgroundImage(backgroundImage);
-    startCountdownCircle(countdownCircle);
+    hideElementContent(welcomeScreen);
     chooseQuestionForEachLetter();
+    changeBackgroundImage();
+    startCountdownCircle();
 
     ask.innerHTML = `<span class = 'letter'>Preparate</span><span class = 'letter-question'>${secondsOfPreparation}</span>`;
 
@@ -34,12 +31,14 @@ export const preparePasapalabraGame = () => {
 
         if (secondsOfPreparation <= 0) {
             gameData.username = (generateUpperCamelCase(usernameInput.value));
-            usernameInput.value = '';
-            gameData.isGameOver = false;
+            registerPasapalabraGameEventListeners();
             clearInterval(preparationTime);
-            startCountdown(countdownNumber, secondsOfGame, deselectLetter, gameData, getSelectedLetter, finishGame, countdownCircle, ask, restartQuestionPosition);
-            registerPasapalabraGameEventListeners(pasapalabra, check, handleDownButtonPasapalabra, handleUpbuttonPasapalabra, handleDownButtonCheck, handleUpbuttonCheck);
-            startNextTurn(userAnswerInput, ask, finishGame, gameData, countdown, countdownCircle, restartQuestionPosition);
+            startCountdown(secondsOfGame);
+            gameData.isGameOver = false;
+            usernameInput.value = '';
+            startNextTurn();
         }
     }, 1000);
 };
+
+export { preparePasapalabraGame };

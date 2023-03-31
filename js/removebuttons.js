@@ -1,4 +1,8 @@
-export const removeButtons = (menuButton, stopButton, restartButton, classificationButton, closeClassificationButton, pasapalabra, check, handleShowOptionsMenu, handleHideOptionsMenu, handleStopGame, handleRestartGame, handleOpenClassification, handleCloseClassification, handleDownButtonPasapalabra, handleUpbuttonPasapalabra, handleDownButtonCheck, handleUpbuttonCheck) => {
+import { handleCloseClassification, handleHideOptionsMenu, handleOpenClassification, handleRestartGame, handleShowOptionsMenu, handleStopGame } from "./optionsmenu.js";
+import { check, classificationButton, closeClassificationButton, menuButton, pasapalabra, restartButton, stopButton } from "./queryselector.js";
+import { handleDownButtonCheck, handleDownButtonPasapalabra, handleUpbuttonCheck, handleUpbuttonPasapalabra } from "./getuseranswer.js";
+
+const removeButtons = () => {
     closeClassificationButton.removeEventListener('click', handleCloseClassification);
     classificationButton.removeEventListener('click', handleOpenClassification);
     pasapalabra.removeEventListener('mousedown', handleDownButtonPasapalabra);
@@ -12,3 +16,5 @@ export const removeButtons = (menuButton, stopButton, restartButton, classificat
     removeEventListener('mouseup', handleUpbuttonCheck);
     removeEventListener('keyup', handleUpbuttonCheck);
 };
+
+export { removeButtons };

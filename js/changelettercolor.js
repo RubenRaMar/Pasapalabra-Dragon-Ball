@@ -1,10 +1,13 @@
-import { letters } from "./queryselector.js";
+import { getSelectedLetter, letters } from "./queryselector.js";
+import { gameData } from "./app.js";
 
 const selectLetter = (letterPosition) => letterPosition.classList.add('selected-letter');
 
-const deselectLetter = (gameData, getSelectedLetter) => {
+const deselectLetter = () => {
     if (!gameData.isGameOver) getSelectedLetter().classList.remove('selected-letter');
 };
+
+const changeLetterColor = (isCorrectAnswer, letterPosition) => isCorrectAnswer ? letterPosition.classList.add('correct-letter') : letterPosition.classList.add('failed-letter');
 
 const restartLettersColor = () => {
     letters.forEach(letter => {
@@ -12,4 +15,5 @@ const restartLettersColor = () => {
         letter.classList.remove('correct-letter')
     });
 };
-export { selectLetter, deselectLetter, restartLettersColor };
+
+export { selectLetter, deselectLetter, restartLettersColor, changeLetterColor };

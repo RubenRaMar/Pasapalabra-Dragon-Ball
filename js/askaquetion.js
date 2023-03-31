@@ -1,1 +1,3 @@
-export const askAQuestion = (ask, choosenQuestion, choosenQuestionIndex) => ask.innerHTML = choosenQuestion.question[choosenQuestionIndex];
+const askAQuestion = (ask, choosenQuestion, choosenQuestionIndex) => ask.innerHTML = choosenQuestion.question[choosenQuestionIndex];
+
+export { askAQuestion }

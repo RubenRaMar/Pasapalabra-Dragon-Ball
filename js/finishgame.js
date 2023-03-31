@@ -1,15 +1,19 @@
+import { countdown, pauseCountdownCircle } from './countdown.js';
+import { restartQuestionPosition } from './startnextturn.js';
 import { generateRanking } from './generateranking.js';
-import { pauseCountdownCircle } from './countdown.js';
+import { ask } from './queryselector.js';
+import { gameData } from './app.js';
 
-
-export const finishGame = (gameData, countdown, countdownCircle, ask, restartQuestionPosition) => {
+const finishGame = () => {
 
     if (!gameData.isGameOver) {
         clearInterval(countdown);
-        pauseCountdownCircle(countdownCircle);
+        pauseCountdownCircle();
         ask.innerHTML = `<span class = 'letter'>Final</span><span class = 'letter-question'>Bien jugado ${gameData.username}! Has conseguido un total de ${gameData.answerPoints} puntos.</span>`;
         generateRanking(gameData);
         restartQuestionPosition();
         gameData.isGameOver = true;
     };
 };
+
+export { finishGame };

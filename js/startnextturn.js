@@ -1,8 +1,9 @@
-import { askAQuestion } from './askaquetion.js';
-import { questions } from './questions.js';
+import { ask, userAnswerInput } from './queryselector.js';
+import { setQuestionData } from './setquestiondata.js';
 import { selectLetter } from './changelettercolor.js';
-import { getLetterPosition } from './queryselector.js';
-import { setQuestionData } from './setquestiondata.js'
+import { askAQuestion } from './askaquetion.js';
+import { finishGame } from './finishgame.js';
+import { questions } from './questions.js';
 
 const questionData = {
     choosenQuestionIndex : '',
@@ -12,25 +13,24 @@ const questionData = {
     letterPosition       : 0,
 }
 
-const checkIfPlaying = () => questions.every((question) => question.answered);
-
-const startNextTurn = (userAnswerInput, ask, finishGame, gameData, countdown, countdownCircle, restartQuestionPosition) => {
+const startNextTurn = () => {
 
     userAnswerInput.value = '';
-    if (questionData.questionPosition === 27) questionData.questionPosition = 0;
-    setQuestionData(questionData, getLetterPosition, questions)
+    if (questionData.questionPosition === 27) questionData.questionPosition = 0;  
+    setQuestionData(questionData, questions)
 
     if ((!checkIfPlaying())) {
-
-        if (questionData.answered) return (questionData.questionPosition++) + (startNextTurn(userAnswerInput, ask, finishGame, gameData, countdown, countdownCircle, restartQuestionPosition));
+        if (questionData.answered) return (questionData.questionPosition++) + (startNextTurn());
 
         askAQuestion(ask, questionData.choosenQuestion, questionData.choosenQuestionIndex);
         selectLetter(questionData.letterPosition);
         questionData.questionPosition++
     };
 
-    if (checkIfPlaying()) (finishGame(gameData, countdown, countdownCircle, ask, restartQuestionPosition));
+    if (checkIfPlaying()) finishGame();
 };
+
+const checkIfPlaying = () => questions.every((question) => question.answered);
 
 const restartQuestionPosition = () => questionData.questionPosition = 0;
 

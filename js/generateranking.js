@@ -6,7 +6,7 @@ class GetUserData {
     };
 };
 
-export const generateRanking = (gameData) => {
+const generateRanking = (gameData) => {
     let rankingPosition = 0;
 
     if (gameData.username.length > 30) gameData.username = gameData.username.slice(0, 31) + '...';
@@ -29,3 +29,5 @@ export const generateRanking = (gameData) => {
         };
     });
 };
+
+export { generateRanking };

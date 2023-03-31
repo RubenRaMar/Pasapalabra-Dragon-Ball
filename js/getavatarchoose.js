@@ -1,25 +1,22 @@
-import { preparePasapalabraGame } from "./preparatepasapalabragame.js";
 import { avatars, confirmAvatar, usernameInput } from "./queryselector.js";
+import { preparePasapalabraGame } from "./preparatepasapalabragame.js";
 import { circleAvatar } from "./queryselector.js";
 
-const restartAvatarClasses = (circleAvatar) => {
+const restartAvatarClasses = () => {
     avatars.forEach((avatar) => {
         avatar.classList.remove('selected-avatar');
-        avatar.classList.add('avatar');
         circleAvatar.src = 'images/empty.png';
+        avatar.classList.add('avatar');
     });
 };
 
-const selectedAvatar = (avatar) => {
-    avatar.classList.add('selected-avatar');
-    avatar.classList.remove('avatar');;
-};
+const selectedAvatar = (avatar) => (avatar.classList.add('selected-avatar')) + (avatar.classList.remove('avatar'));
 
-const chooseAvatar = (circleAvatar) => {
+const chooseAvatar = () => {
     
     for (let index = 0; index < avatars.length; index++) {
         avatars[index].addEventListener('click', (avatar) => {
-            restartAvatarClasses(circleAvatar);
+            restartAvatarClasses();
             selectedAvatar(avatars[index]);
             circleAvatar.src = avatar.target.src;
         });
@@ -29,8 +26,8 @@ const chooseAvatar = (circleAvatar) => {
 const handleChooseAvatar = (keypress) => {
     if (keypress.key === 'Enter' || keypress.type === 'mousedown') {
         if (!circleAvatar.src.includes("empty") && usernameInput.value) {
-            removeEventListener('keydown', handleChooseAvatar);
             confirmAvatar.removeEventListener('mousedown', handleChooseAvatar);
+            removeEventListener('keydown', handleChooseAvatar);
             preparePasapalabraGame();
         };
     };

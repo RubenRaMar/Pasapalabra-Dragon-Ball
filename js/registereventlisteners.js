@@ -1,19 +1,21 @@
-const registerWelcomeScreenEventsLinteners = (menuButton, stopButton, restartButton, classificationButton, closeClassificationButton, addEventListener, confirmAvatar, handleShowOptionsMenu, handleHideOptionsMenu, handleStopGame, handleRestartGame, handleOpenClassification, handleCloseClassification, handleChooseAvatar) => {
-   
+import { handleChooseAvatar } from "./getavatarchoose.js";
+import { handleDownButtonCheck, handleDownButtonPasapalabra, handleUpbuttonCheck, handleUpbuttonPasapalabra } from "./getuseranswer.js";
+import { handleCloseClassification, handleHideOptionsMenu, handleOpenClassification, handleRestartGame, handleShowOptionsMenu, handleStopGame } from "./optionsmenu.js";
+import { check, classificationButton, closeClassificationButton, confirmAvatar, menuButton, pasapalabra, restartButton, stopButton } from "./queryselector.js";
+
+
+const registerWelcomeScreenEventsLinteners = () => {
+    closeClassificationButton.addEventListener('click', handleCloseClassification);
+    classificationButton.addEventListener('click', handleOpenClassification);
+    confirmAvatar.addEventListener('mousedown', handleChooseAvatar);
     menuButton.addEventListener('mouseover', handleShowOptionsMenu);
     menuButton.addEventListener('mouseout', handleHideOptionsMenu);
-
-    classificationButton.addEventListener('click', handleOpenClassification);
-    closeClassificationButton.addEventListener('click', handleCloseClassification);
-
+    restartButton.addEventListener('click', handleRestartGame);   
     stopButton.addEventListener('click', handleStopGame);
-    restartButton.addEventListener('click', handleRestartGame);
-   
-    confirmAvatar.addEventListener('mousedown', handleChooseAvatar);
     addEventListener('keydown', handleChooseAvatar);
 };
 
-const registerPasapalabraGameEventListeners = (pasapalabra, check, handleDownButtonPasapalabra, handleUpbuttonPasapalabra, handleDownButtonCheck, handleUpbuttonCheck) => {
+const registerPasapalabraGameEventListeners = () => {
     pasapalabra.addEventListener('mousedown', handleDownButtonPasapalabra);
     check.addEventListener('mousedown', handleDownButtonCheck);
     addEventListener('mouseup', handleUpbuttonPasapalabra);
