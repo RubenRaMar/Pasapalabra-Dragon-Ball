@@ -16,7 +16,7 @@ const processUserAnswer = () => {
     const isCorrectAnswer = checkIfTheAnswerIsCorrect(questionData.choosenQuestion.answer, questionData.choosenQuestionIndex, userAnswerInput)
 
     changeLetterColor(isCorrectAnswer, questionData.letterPosition);
-    
+
     deselectLetter();
     gameData.answerPoints += getAnwerPoints(isCorrectAnswer);
     questionData.choosenQuestion.answered = true;

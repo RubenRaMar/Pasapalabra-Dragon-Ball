@@ -10,7 +10,7 @@ const registerWelcomeScreenEventsLinteners = () => {
     confirmAvatar.addEventListener('mousedown', handleChooseAvatar);
     menuButton.addEventListener('mouseover', handleShowOptionsMenu);
     menuButton.addEventListener('mouseout', handleHideOptionsMenu);
-    restartButton.addEventListener('click', handleRestartGame);   
+    restartButton.addEventListener('click', handleRestartGame);
     stopButton.addEventListener('click', handleStopGame);
     addEventListener('keydown', handleChooseAvatar);
 };

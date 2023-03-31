@@ -16,7 +16,7 @@ const questionData = {
 const startNextTurn = () => {
 
     userAnswerInput.value = '';
-    if (questionData.questionPosition === 27) questionData.questionPosition = 0; 
+    if (questionData.questionPosition === 27) questionData.questionPosition = 0;
 
     getQuestionData()
 

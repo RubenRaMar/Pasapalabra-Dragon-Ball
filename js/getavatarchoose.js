@@ -13,7 +13,7 @@ const restartAvatarClasses = () => {
 const selectedAvatar = (avatar) => (avatar.classList.add('selected-avatar')) + (avatar.classList.remove('avatar'));
 
 const chooseAvatar = () => {
-    
+
     for (let index = 0; index < avatars.length; index++) {
         avatars[index].addEventListener('click', (avatar) => {
             restartAvatarClasses();
