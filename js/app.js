@@ -1,13 +1,12 @@
-
-import { registerWelcomeScreenEventsLinteners } from './registerbuttons.js';
-import { chooseAvatar } from './getavatarchoose.js';
+import { registerWelcomeScreenEventsLinteners } from "./registerbuttons.js";
+import { chooseAvatar } from "./getavatarchoose.js";
 
 const gameData = {
-    username: '',
-    answerPoints: 0,
-    isGameOver: true,
-    usersPoints: []
-}
+  username: "",
+  answerPoints: 0,
+  isGameOver: true,
+  usersPoints: [],
+};
 
 registerWelcomeScreenEventsLinteners();
 chooseAvatar();
