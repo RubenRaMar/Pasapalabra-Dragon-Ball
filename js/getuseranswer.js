@@ -1,8 +1,8 @@
-import { gameData } from "./app.js";
-import { deselectLetter } from "./changelettercolor.js";
-import { processUserAnswer } from "./processuseranswer.js";
 import { check, checkImage, pasapalabra, pasapalabraImage } from "./registerqueryselector.js";
+import { processUserAnswer } from "./processuseranswer.js";
+import { deselectLetter } from "./changelettercolor.js";
 import { startNextTurn } from "./startnextturn.js";
+import { gameData } from "./app.js";
 
 const handleDownButtonCheck = (keypress) => {
     if (gameData.isGameOver) return check.removeEventListener('mousedown', handleDownButtonCheck);

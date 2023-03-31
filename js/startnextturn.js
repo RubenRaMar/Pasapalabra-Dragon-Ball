@@ -1,5 +1,5 @@
 import { ask, userAnswerInput } from './registerqueryselector.js';
-import { setQuestionData } from './setquestiondata.js';
+import { getQuestionData } from './getquestiondata.js';
 import { selectLetter } from './changelettercolor.js';
 import { askAQuestion } from './askaquetion.js';
 import { finishGame } from './finishgame.js';
@@ -16,8 +16,9 @@ const questionData = {
 const startNextTurn = () => {
 
     userAnswerInput.value = '';
-    if (questionData.questionPosition === 27) questionData.questionPosition = 0;  
-    setQuestionData()
+    if (questionData.questionPosition === 27) questionData.questionPosition = 0; 
+
+    getQuestionData()
 
     if ((!checkIfPlaying())) {
         if (questionData.answered) return (questionData.questionPosition++) + (startNextTurn());

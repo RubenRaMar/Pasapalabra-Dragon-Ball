@@ -3,7 +3,7 @@ import { hideElementContent, showElementContent } from "./showandhideelementcont
 import { registerPasapalabraGameEventListeners } from "./registerbuttons.js";
 import { startCountdown, startCountdownCircle } from "./countdown.js";
 import { generateUpperCamelCase } from "./generateupperCamelCase.js";
-import { chooseQuestionForEachLetter } from "./setquestiondata.js";
+import { chooseQuestionForEachLetter } from "./getquestiondata.js";
 import { changeBackgroundImage } from "./changebackgroundimage.js"
 import { startNextTurn } from "./startnextturn.js";
 import { gameData } from "./app.js";

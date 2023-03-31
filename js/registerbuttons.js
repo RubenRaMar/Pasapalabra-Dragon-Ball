@@ -1,7 +1,7 @@
-import { handleChooseAvatar } from "./getavatarchoose.js";
-import { handleDownButtonCheck, handleDownButtonPasapalabra, handleUpbuttonCheck, handleUpbuttonPasapalabra } from "./getuseranswer.js";
-import { handleCloseClassification, handleHideOptionsMenu, handleOpenClassification, handleRestartGame, handleShowOptionsMenu, handleStopGame } from "./optionsmenu.js";
 import { check, classificationButton, closeClassificationButton, confirmAvatar, menuButton, pasapalabra, restartButton, stopButton } from "./registerqueryselector.js";
+import { handleCloseClassification, handleHideOptionsMenu, handleOpenClassification, handleRestartGame, handleShowOptionsMenu, handleStopGame } from "./optionsmenu.js";
+import { handleDownButtonCheck, handleDownButtonPasapalabra, handleUpbuttonCheck, handleUpbuttonPasapalabra } from "./getuseranswer.js";
+import { handleChooseAvatar } from "./getavatarchoose.js";
 
 
 const registerWelcomeScreenEventsLinteners = () => {

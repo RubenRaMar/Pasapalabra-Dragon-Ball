@@ -406,10 +406,6 @@ const questions = [
     },
 ];
 
-const restartQuestions = () => {
-    questions.forEach(question => {
-        question.answered = false;
-    });
-};
+const restartQuestions = () => questions.forEach(question => question.answered = false);
 
 export { questions, restartQuestions };
