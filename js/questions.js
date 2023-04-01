@@ -3,7 +3,7 @@ const questions = [
     letter: "a",
     answer: ["nappa", "arale", "bora"],
     answered: false,
-    questionIndex: false,
+    questionIndex: 0,
     question: [
       "<span class = 'letter'>CONTIENE LA A</span><span class = 'letter-question'>Personaje que acompaña a Vegeta la primera vez que llega a la Tierra en el Arco de los Saiyans.</span>",
       "<span class = 'letter'>CON LA A</span><span class = 'letter-question'>Androide construida por Senbei Norimaki y que aparece en Dragon Ball y Dragon Ball Super.</span>",
@@ -14,7 +14,7 @@ const questions = [
     letter: "b",
     answer: ["bulma", "bubbles", "baba"],
     answered: false,
-    questionIndex: false,
+    questionIndex: 0,
     question: [
       "<span class = 'letter'>CON LA B</span><span class = 'letter-question'>Personaje femenina que creó el Radar del dragón.</span>",
       "<span class = 'letter'>CON LA B</span><span class = 'letter-question'>Chimpancé que vive con Kaíto.</span>",
@@ -25,7 +25,7 @@ const questions = [
     letter: "c",
     answer: ["chaoz", "chichi", "champa"],
     answered: false,
-    questionIndex: false,
+    questionIndex: 0,
     question: [
       "<span class = 'letter'>CON LA C</span><span class = 'letter-question'>Personaje de piel blanca y alumno de la Escuela Grulla.</span>",
       "<span class = 'letter'>CON LA C</span><span class = 'letter-question'>La princesa del Monte Fly-pan.</span>",
@@ -36,7 +36,7 @@ const questions = [
     letter: "d",
     answer: ["dabra", "duolin", "dende"],
     answered: false,
-    questionIndex: false,
+    questionIndex: 0,
     question: [
       "<span class = 'letter'>CON LA D</span><span class = 'letter-question'>Personaje que es el Rey de las tinieblas y mano derecha de Babidi.</span>",
       "<span class = 'letter'>CON LA D</span><span class = 'letter-question'>Nombre del monasterio donde Krilin originalmente entrenó antes de salir en busca de Mutenroshi.</span>",
@@ -47,7 +47,7 @@ const questions = [
     letter: "e",
     answer: ["estrella", "vegeta", "magenta"],
     answered: false,
-    questionIndex: false,
+    questionIndex: 0,
     question: [
       "<span class = 'letter'>CON LA E</span><span class = 'letter-question'>Imagen que aparece en el interior de las Esferas de Dragón.</span>",
       "<span class = 'letter'>CONTIENE LA E</span><span class = 'letter-question'>Personaje que derrota a Nappa en el Arco de los Saiyans.</span>",
@@ -58,7 +58,7 @@ const questions = [
     letter: "f",
     answer: ["frost", "pilaf", "brief"],
     answered: false,
-    questionIndex: false,
+    questionIndex: 0,
     question: [
       "<span class = 'letter'>CON LA F</span><span class = 'letter-question'>Pirata mafioso del Universo 6 y contraparte de Freezer en dicho universo.</span>",
       "<span class = 'letter'>CONTIENE LA F</span><span class = 'letter-question'>Nombre del primer villano de Dragon Ball.</span>",
@@ -69,7 +69,7 @@ const questions = [
     letter: "g",
     answer: ["garlic", "gamma", "gohan"],
     answered: false,
-    questionIndex: false,
+    questionIndex: 0,
     question: [
       "<span class = 'letter'>CON LA G</span><span class = 'letter-question'>Antagonista de la primera película de Dragon Ball Z y que ansiaba vengar la muerte de su padre ante Piccolo Original.</span>",
       "<span class = 'letter'>CON LA G</span><span class = 'letter-question'>Nombre de los androides nº1 y nº2 creados por el Dr.Hedo en la película Dragon Ball Super: Super Hero</span>",
@@ -80,7 +80,7 @@ const questions = [
     letter: "h",
     answer: ["shu", "shenron", "hit"],
     answered: false,
-    questionIndex: false,
+    questionIndex: 0,
     question: [
       "<span class = 'letter'>CONTIENE LA H</span><span class = 'letter-question'>Perro humanoide que forma parte del grupo de Pilaf.</span>",
       "<span class = 'letter'>CONTIENE LA H</span><span class = 'letter-question'>Nombre del dragon creado por Kami a partir de una estatua.</span>",
@@ -91,7 +91,7 @@ const questions = [
     letter: "i",
     answer: ["krilin", "kami", "kaito"],
     answered: false,
-    questionIndex: false,
+    questionIndex: 0,
     question: [
       "<span class = 'letter'>CONTIENE LA I</span><span class = 'letter-question'>Personaje que más veces ha muerto a lo largo de la serie.</span>",
       "<span class = 'letter'>CONTIENE LA I</span><span class = 'letter-question'>Personaje que salió de la parte bondadosa de Piccolo original y que durante mucho años fue el Guardián de la Tierra.</span>",
@@ -102,7 +102,7 @@ const questions = [
     letter: "j",
     answer: ["yajirobei", "jeice", "jiren"],
     answered: false,
-    questionIndex: false,
+    questionIndex: 0,
     question: [
       "<span class = 'letter'>CONTIENE LA J</span><span class = 'letter-question'>Personaje al que Shon Goku se le come el pescado que tenia cocinando en el Arco del Rey Demonio Piccolo.</span>",
       "<span class = 'letter'>CON LA J</span><span class = 'letter-question'>Personaje de piel roja y pelo largo que era miembro de las Fuerzas Especiales de Freezer.</span>",
@@ -113,7 +113,7 @@ const questions = [
     letter: "k",
     answer: ["kale", "bardock", "kinton"],
     answered: false,
-    questionIndex: false,
+    questionIndex: 0,
     question: [
       "<span class = 'letter'>CON LA K</span><span class = 'letter-question'>Conocida también como la Saiyana Demonio y habitante del Planteta Sadala del Universo 6.</span>",
       "<span class = 'letter'>CONTIENE LA K</span><span class = 'letter-question'>Saiano esposo de Gine y que era lider de un escuadrón al mando del Rey Vegeta.</span>",
@@ -124,7 +124,7 @@ const questions = [
     letter: "l",
     answer: ["lemo", "lunch", "cell"],
     answered: false,
-    questionIndex: false,
+    questionIndex: 0,
     question: [
       "<span class = 'letter'>CON LA L</span><span class = 'letter-question'>Personaje que abandona el Imperio de Freezer y que junto a Chelye se une a Broly en la película Dragon Ball Super: Broly.</span>",
       "<span class = 'letter'>CON LA L</span><span class = 'letter-question'>Personaje femenino con doble personalidad, una bondadosa y otra malvada.</span>",
@@ -135,7 +135,7 @@ const questions = [
     letter: "m",
     answer: ["marron", "mutaito", "mai"],
     answered: false,
-    questionIndex: false,
+    questionIndex: 0,
     question: [
       "<span class = 'letter'>CON LA M</span><span class = 'letter-question'>Nombre de la hija de Krilin y Androide 18.</span>",
       "<span class = 'letter'>CON LA M</span><span class = 'letter-question'>Gran Maestro que enciarra al Rey Demonio Piccolo con la técnica Mafuaba en un contenedor electónico</span>",
@@ -146,7 +146,7 @@ const questions = [
     letter: "n",
     answer: ["nail", "gine", "konkichi"],
     answered: false,
-    questionIndex: false,
+    questionIndex: 0,
     question: [
       "<span class = 'letter'>CON LA N</span><span class = 'letter-question'>Protector principal de el Gran patriarca de Namek y que acaba fusionado con Piccolo.</span>",
       "<span class = 'letter'>CONTIENE LA N</span><span class = 'letter-question'>Mujer Saiyana de classe baja y esposa de Bardock.</span>",
@@ -157,7 +157,7 @@ const questions = [
     letter: "ñ",
     answer: ["muñeca", "montaña", "baño"],
     answered: false,
-    questionIndex: false,
+    questionIndex: 0,
     question: [
       "<span class = 'letter'>CONTIENE LA Ñ</span><span class = 'letter-question'>Juguete en el que tranforman a Pan en Dragon Ball GT.</span>",
       "<span class = 'letter'>CONTIENE LA Ñ</span><span class = 'letter-question'>Lugar natural donde Son Goku vivia con su abuelo Son Gohan.</span>",
@@ -168,7 +168,7 @@ const questions = [
     letter: "o",
     answer: ["piccolo", "gero", "goku"],
     answered: false,
-    questionIndex: false,
+    questionIndex: 0,
     question: [
       "<span class = 'letter'>CONTIENE LA O</span><span class = 'letter-question'>Personaje que mata por primera vez a Son Goku.</span>",
       "<span class = 'letter'>CONTIENE LA O</span><span class = 'letter-question'>Doctor maligno y miembro del Ejército del Listón Rojo que se autoconvierte en el Androide 20</span>",
@@ -179,7 +179,7 @@ const questions = [
     letter: "p",
     answer: ["pan", "popo", "polunga"],
     answered: false,
-    questionIndex: false,
+    questionIndex: 0,
     question: [
       "<span class = 'letter'>CON LA P</span><span class = 'letter-question'>Personaje más joven en dominar el arte de volar.</span>",
       "<span class = 'letter'>CON LA P</span><span class = 'letter-question'>Personaje que se encarga de ayudar a Kami y atender a los visitantes que llegan al Templo Sagrado.</span>",
@@ -190,7 +190,7 @@ const questions = [
     letter: "q",
     answer: ["pequeño", "quitela", "qi"],
     answered: false,
-    questionIndex: false,
+    questionIndex: 0,
     question: [
       "<span class = 'letter'>CONTIENE LA Q</span><span class = 'letter-question'>Tamaño de Son Goku cuando sale de la tierra junto Pan y Trunks en Dragon Ball GT.</span>",
       "<span class = 'letter'>CON LA Q</span><span class = 'letter-question'>Personaje que ostenta el cargo de Dios de la Destrucción en el Universo 4.</span>",
@@ -201,7 +201,7 @@ const questions = [
     letter: "r",
     answer: ["raditz", "mutenroshi", "broly"],
     answered: false,
-    questionIndex: false,
+    questionIndex: 0,
     question: [
       "<span class = 'letter'>CON LA R</span><span class = 'letter-question'>Segundo saiyajin en llegar a la tierra.</span>",
       "<span class = 'letter'>CONTIENE LA R</span><span class = 'letter-question'>Alumno aventajado del Maestro Mutaito y que en la actualidad es calvo.</span>",
@@ -212,7 +212,7 @@ const questions = [
     letter: "s",
     answer: ["shin", "shen", "saibaimen"],
     answered: false,
-    questionIndex: false,
+    questionIndex: 0,
     question: [
       "<span class = 'letter'>CON LA S</span><span class = 'letter-question'>Nombre del Dios Neptuno del Universo 7</span>",
       "<span class = 'letter'>CON LA S</span><span class = 'letter-question'>Ser humano cuyo cuerpo fue utilizado por Kami para participar en el 23º Torneo Mundial de las Artes Marciales</span>",
@@ -223,7 +223,7 @@ const questions = [
     letter: "t",
     answer: ["trunks", "tambourine", "burter"],
     answered: false,
-    questionIndex: false,
+    questionIndex: 0,
     question: [
       "<span class = 'letter'>CON LA T</span><span class = 'letter-question'>Presidente de la Corporación Capsula en Dragon Ball GT.</span>",
       "<span class = 'letter'>CON LA T</span><span class = 'letter-question'>Personaje que enviado por el Gran Rey Demonio Piccolo asesina a Krilin al acabar el Torneo Mundial de las Artes Marciales.</span>",
@@ -234,7 +234,7 @@ const questions = [
     letter: "u",
     answer: ["upa", "murasaki", "uub"],
     answered: false,
-    questionIndex: false,
+    questionIndex: 0,
     question: [
       "<span class = 'letter'>CON LA U</span><span class = 'letter-question'>Hijo de Bora, el guerrero que protege la Torre de Karin.</span>",
       "<span class = 'letter'>CONTIENE LA U</span><span class = 'letter-question'>Personaje encargado de defender el cuarto piso de la sede del Ejército del Listón Rojo y que tiene 4 hermanos idínticos a él.</span>",
@@ -245,7 +245,7 @@ const questions = [
     letter: "v",
     answer: ["videl", "spopovich", "vegeta"],
     answered: false,
-    questionIndex: false,
+    questionIndex: 0,
     question: [
       "<span class = 'letter'>CON LA V</span><span class = 'letter-question'>Hija del ganador del 24º Torneo Mundial de las Artes Marciales.</span>",
       "<span class = 'letter'>CONTIENE LA V</span><span class = 'letter-question'>Humano poseido por Babidi que derrotó a Videl en el 25º Torneo Mundial de las Artes Marciales.</span>",
@@ -256,7 +256,7 @@ const questions = [
     letter: "w",
     answer: ["whis", "woolong", "kewi"],
     answered: false,
-    questionIndex: false,
+    questionIndex: 0,
     question: [
       "<span class = 'letter'>CON LA W</span><span class = 'letter-question'>Ángel guía encargado de asistir y servir como maestro al Dios de la Destrucción del Universo 7, Beerus.</span>",
       "<span class = 'letter'>CON LA W</span><span class = 'letter-question'>Cerdo humanoide que acompaña a Son Goku y Bulma en la primera búsqueda de las Esferas del Dragón.</span>",
@@ -267,7 +267,7 @@ const questions = [
     letter: "x",
     answer: ["xenoverse", "xeno", "xiao"],
     answered: false,
-    questionIndex: false,
+    questionIndex: 0,
     question: [
       "<span class = 'letter'>CON LA X</span><span class = 'letter-question'>Título del vidiejuejo secuala de Dragon Ball Online y que aterrizó en Europa en febrero de 2015.</span>",
       "<span class = 'letter'>CON LA X</span><span class = 'letter-question'>Término usado en Dragon Ball Heroes y Online para Trunks y varios de sus amigos para denominar y diferenciar a varios personajes de otras contrapartes temporales.</span>",
@@ -278,7 +278,7 @@ const questions = [
     letter: "y",
     answer: ["yamcha", "ginyu", "gregory"],
     answered: false,
-    questionIndex: false,
+    questionIndex: 0,
     question: [
       "<span class = 'letter'>CON LA Y</span><span class = 'letter-question'>Personaje que dejo de practicar las Artes Marciales y se hizo profesional en béisbol.</span>",
       "<span class = 'letter'>CONTIENE LA Y</span><span class = 'letter-question'>Líder de la élite de mercenarios de mayor prestigio del Ejército de Freeza.</span>",
@@ -289,7 +289,7 @@ const questions = [
     letter: "z",
     answer: ["zarbon", "freezer", "zamas"],
     answered: false,
-    questionIndex: false,
+    questionIndex: 0,
     question: [
       "<span class = 'letter'>CON LA Z</span><span class = 'letter-question'>Personaje de piel verde y con una trenza que junto a Dodoria es la mano derecha de Freezer.</span>",
       "<span class = 'letter'>CONTIENE LA Z</span><span class = 'letter-question'>Brutal dictador y líder del Imperio Galáctico del Universo 7 con el apoyo estratégico en secreto de su padre Cold.</span>",
