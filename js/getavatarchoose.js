@@ -18,13 +18,13 @@ const selectedAvatar = (avatar) =>
   avatar.classList.add("selected-avatar") + avatar.classList.remove("avatar");
 
 const chooseAvatar = () => {
-  for (let index = 0; index < avatars.length; index++) {
-    avatars[index].addEventListener("click", (avatar) => {
+  avatars.forEach((choosenAvatar) => {
+    choosenAvatar.addEventListener("click", (avatar) => {
       restartAvatarClasses();
-      selectedAvatar(avatars[index]);
+      selectedAvatar(choosenAvatar);
       circleAvatar.src = avatar.target.src;
     });
-  }
+  });
 };
 
 const handleChooseAvatar = (keypress) => {
