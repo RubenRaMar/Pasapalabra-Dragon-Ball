@@ -1,4 +1,6 @@
 const generateUpperCamelCase = (username) => {
+  if (username.length > 30) username = username.slice(0, 31) + "...";
+
   let capitalLetter = true;
   const lettersUsername = [],
     userLetters = username.split("");

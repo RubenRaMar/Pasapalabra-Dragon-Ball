@@ -9,9 +9,6 @@ class GetUserData {
 const generateRanking = (gameData) => {
   let rankingPosition = 0;
 
-  if (gameData.username.length > 30)
-    gameData.username = gameData.username.slice(0, 31) + "...";
-
   new GetUserData(
     gameData.username,
     gameData.answerPoints,
